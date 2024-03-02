@@ -52,12 +52,16 @@
 
     <!-- Link for Loki (TV series) -->
     <a href="https://en.wikipedia.org/wiki/Loki_(TV_series)" class="link" id="lokiLink">Loki (TV series)</a>
+    
+    <!-- Link for The Making of Loki -->
+    <a href="https://marvelcinematicuniverse.fandom.com/wiki/The_Making_of_Loki" class="link" id="makingOfLokiLink">The Making of Loki</a>
 
     <script>
         // Get the link elements
         var tomLink = document.getElementById('tomLink');
         var thorLink = document.getElementById('thorLink');
         var lokiLink = document.getElementById('lokiLink');
+        var makingOfLokiLink = document.getElementById('makingOfLokiLink');
 
         // Function to handle click event
         function handleClick(event, link) {
@@ -82,6 +86,10 @@
 
         lokiLink.addEventListener('click', function(event) {
             handleClick(event, lokiLink);
+        });
+
+        makingOfLokiLink.addEventListener('click', function(event) {
+            handleClick(event, makingOfLokiLink);
         });
     </script>
 </body>
