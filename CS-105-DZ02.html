@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Starting.HTML</title>
+    <style>
+        body {
+            background-color: #161616; /* Black background */
+            color: #92C52C; /* Green text color */
+            font-family: Arial, sans-serif; /* Font style */
+        }
+
+        /* Increase font size for "Philippos Katsambas 5997" */
+        .name {
+            font-size: 24px; /* Adjust size as needed */
+        }
+
+        /* Increase font size for "Video Game Development" */
+        .title {
+            font-size: 20px; /* Adjust size as needed */
+        }
+
+        /* Style link */
+        .link {
+            font-size: 20px; /* Increased font size for links */
+            color: #FFD700; /* Gold color for links */
+            transition: font-size 0.3s; /* Add transition effect */
+            cursor: pointer;
+            display: block;
+            text-align: center;
+            margin-top: 20px; /* Adjust margin as needed */
+            text-decoration: none; /* Remove underline from links */
+        }
+
+        /* Change font size on hover */
+        .link:hover {
+            font-size: 24px; /* Change to desired size on hover */
+        }
+    </style>
+</head>
+<body>
+    <p style="text-align: center;" class="name"><strong>P</strong>hilippos <strong>K</strong>atsambas 5997</p>
+
+    <p2 class="title">Video Game Development</p2>
+
+    <!-- Link for Tom Hiddleston -->
+    <a href="https://en.wikipedia.org/wiki/Tom_Hiddleston" class="link" id="tomLink">Tom Hiddleston</a>
+
+    <!-- Link for Thor: Ragnarok -->
+    <a href="https://en.wikipedia.org/wiki/Thor:_Ragnarok" class="link" id="thorLink">Thor: Ragnarok</a>
+
+    <!-- Link for Loki (TV series) -->
+    <a href="https://en.wikipedia.org/wiki/Loki_(TV_series)" class="link" id="lokiLink">Loki (TV series)</a>
+
+    <script>
+        // Get the link elements
+        var tomLink = document.getElementById('tomLink');
+        var thorLink = document.getElementById('thorLink');
+        var lokiLink = document.getElementById('lokiLink');
+
+        // Function to handle click event
+        function handleClick(event, link) {
+            // Check if the clicked element is the link itself
+            if (event.target === link) {
+                // If it is, allow the default action (opening the link)
+                return true;
+            } else {
+                // If not, prevent the default action
+                event.preventDefault();
+            }
+        }
+
+        // Add click event listeners for each link
+        tomLink.addEventListener('click', function(event) {
+            handleClick(event, tomLink);
+        });
+
+        thorLink.addEventListener('click', function(event) {
+            handleClick(event, thorLink);
+        });
+
+        lokiLink.addEventListener('click', function(event) {
+            handleClick(event, lokiLink);
+        });
+    </script>
+</body>
+</html>
