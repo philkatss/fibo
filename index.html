@@ -37,6 +37,27 @@
         .link:hover {
             font-size: 24px; /* Change to desired size on hover */
         }
+
+        /* Style form */
+        .form-container {
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        .form-container input {
+            margin: 5px;
+            padding: 5px;
+            width: 200px;
+        }
+
+        .form-container button {
+            margin-top: 10px;
+            padding: 10px 20px;
+            background-color: #FFD700;
+            color: black;
+            border: none;
+            cursor: pointer;
+        }
     </style>
 </head>
 <body>
@@ -56,41 +77,38 @@
     <!-- Link for The Making of Loki -->
     <a href="https://marvelcinematicuniverse.fandom.com/wiki/The_Making_of_Loki" class="link" id="makingOfLokiLink">The Making of Loki</a>
 
-    <script>
-        // Get the link elements
-        var tomLink = document.getElementById('tomLink');
-        var thorLink = document.getElementById('thorLink');
-        var lokiLink = document.getElementById('lokiLink');
-        var makingOfLokiLink = document.getElementById('makingOfLokiLink');
+    <!-- Form to collect user information -->
+    <div class="form-container">
+        <form id="userInfoForm">
+            <label for="name">Name:</label><br>
+            <input type="text" id="name" name="name" required><br>
+            <label for="age">Age:</label><br>
+            <input type="number" id="age" name="age" required><br>
+            <label for="email">Email:</label><br>
+            <input type="email" id="email" name="email" required><br>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
 
-        // Function to handle click event
-        function handleClick(event, link) {
-            // Check if the clicked element is the link itself
-            if (event.target === link) {
-                // If it is, allow the default action (opening the link)
-                return true;
-            } else {
-                // If not, prevent the default action
-                event.preventDefault();
-            }
+    <script>
+        // Get the form element
+        var form = document.getElementById('userInfoForm');
+
+        // Function to handle form submission
+        function handleSubmit(event) {
+            event.preventDefault();
+            var formData = new FormData(form);
+            var userInfo = {};
+            formData.forEach(function(value, key) {
+                userInfo[key] = value;
+            });
+            // Display user information
+            console.log(userInfo);
+            // You can add code here to display user information in desired format
         }
 
-        // Add click event listeners for each link
-        tomLink.addEventListener('click', function(event) {
-            handleClick(event, tomLink);
-        });
-
-        thorLink.addEventListener('click', function(event) {
-            handleClick(event, thorLink);
-        });
-
-        lokiLink.addEventListener('click', function(event) {
-            handleClick(event, lokiLink);
-        });
-
-        makingOfLokiLink.addEventListener('click', function(event) {
-            handleClick(event, makingOfLokiLink);
-        });
+        // Add form submission event listener
+        form.addEventListener('submit', handleSubmit);
     </script>
 </body>
 </html>
