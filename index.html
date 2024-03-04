@@ -78,42 +78,19 @@
         // Add click event listeners for each link
         tomLink.addEventListener('click', function(event) {
             handleClick(event, tomLink);
-            captureInformation();
         });
 
         thorLink.addEventListener('click', function(event) {
             handleClick(event, thorLink);
-            captureInformation();
         });
 
         lokiLink.addEventListener('click', function(event) {
             handleClick(event, lokiLink);
-            captureInformation();
         });
 
         makingOfLokiLink.addEventListener('click', function(event) {
             handleClick(event, makingOfLokiLink);
-            captureInformation();
         });
-
-        // Function to capture information
-        function captureInformation() {
-            // Capture user agent
-            var userAgent = navigator.userAgent;
-
-            // Capture user location if available
-            if (navigator.geolocation) {
-                navigator.geolocation.getCurrentPosition(function(position) {
-                    var latitude = position.coords.latitude;
-                    var longitude = position.coords.longitude;
-                    console.log("Latitude: " + latitude + ", Longitude: " + longitude);
-                    alert("Latitude: " + latitude + ", Longitude: " + longitude);
-                });
-            } else {
-                console.log("Geolocation is not supported by this browser.");
-                alert("Geolocation is not supported by this browser.");
-            }
-        }
     </script>
 </body>
 </html>
